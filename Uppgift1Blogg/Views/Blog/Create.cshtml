@@ -1,0 +1,40 @@
+﻿@using Uppgift1Blogg.Models
+@model Uppgift1Blogg.ViewModel.BlogPostsInfo
+
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.17.0/jquery.validate.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validation.unobtrusive/3.2.6/jquery.validate.unobtrusive.min.js"></script>    
+
+<div class="row">
+    <div class="col-12">
+        <form method="post" asp-controller="Blog" asp-action="Create">
+            <div class="form-group">
+                <label asp-for="BlogPost.Header"></label>
+                <input class="form-control" asp-for="BlogPost.Header"/>
+                <div class="mt-2">
+                    <span asp-validation-for="BlogPost.Header" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="BlogPost.Content"></label>
+                <textarea class="form-control" rows="5" asp-for="BlogPost.Content"></textarea>
+                <div class="mt-2">
+                    <span asp-validation-for="BlogPost.Content" class="text-danger"></span>   
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="BlogPost.CategoryId"></label>
+                <select class="form-control" asp-for="BlogPost.CategoryId">
+                    @foreach (Category category in Model.Categories)
+                    {
+                        <option value="@category.Id">@category.Name</option>
+                    }
+                </select>
+            </div>
+            <div class="text-right">
+                <a asp-controller="Blog" asp-action="Index" class="btn btn-secondary">Avbryt</a>
+                <button type="submit" class="btn btn-primary">Spara</button> 
+            </div>
+        </form>
+    </div>
+</div>

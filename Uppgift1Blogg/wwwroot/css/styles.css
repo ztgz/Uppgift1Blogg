@@ -1,0 +1,40 @@
+﻿body {
+    background-color: lightgrey;
+    font-family: 'Bellefair', serif;
+}
+
+ul {
+    list-style-type: none;
+}
+
+#navbar {
+    background-color: #800000;
+}
+
+#title {
+    font-family: 'Joti One', cursive;
+    border-bottom: 1px solid black;
+}
+
+    #title h5 {
+        color: #880a0a;
+    }
+
+.main {
+    border-right: 1px solid gray;
+}
+
+.profilePic {
+    max-width: 75%;
+}
+
+.categories h3 {
+    background-color: #800000;
+    border: 1px solid black;
+    color: white;
+}
+
+.categories a {
+    color: black;
+    font-size: 1.25rem;
+}

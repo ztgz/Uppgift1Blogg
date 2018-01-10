@@ -1,0 +1,59 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <link href="~/css/styles.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Bellefair|Joti+One" rel="stylesheet">
+    <title>Blogg</title>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Start navbar -->
+        <nav class="navbar navbar-expand-md navbar-dark" id="navbar">
+            <a class="navbar-brand" asp-controller="Blog" asp-action="Index">Bloggen</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item pt-md-1">
+                        <a class="nav-link" asp-controller="Blog" asp-action="Index">Inlägg</a>
+                    </li>
+                    <li class="nav-item pt-md-1">
+                        <a class="nav-link" asp-controller="Blog" asp-action="Create">Skriv ny post</a>
+                    </li>
+                </ul>
+                <div class="navbar-nav ml-auto">
+                    <form class="form-inline" method="get" asp-controller="Blog" asp-action="Search">
+                        <input class="form-control mr-2" type="search" placeholder="Sök blogginlägg" aria-label="Search" id="searchTxt" name="searchTxt"/>
+                        <button class="btn btn-dark" type="submit">Sök</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+        <!-- End navbar -->
+        
+        <div class="row py-4 mb-5" id="title">
+            <div class="col-12 text-center" >
+                <h1>Runtime exception</h1>
+                <h5><i>-En blogg om programmering</i></h5>
+            </div>
+        </div>
+        
+
+        @RenderBody()
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+</body>
+</html>

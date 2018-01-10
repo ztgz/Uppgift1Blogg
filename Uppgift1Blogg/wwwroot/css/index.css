@@ -1,0 +1,16 @@
+﻿#main {
+    border-right: 1px solid gray;
+}
+
+#blogPostList a {
+    color: black;
+    font-size: 2rem;
+}
+
+#blogPostList p {
+    font-style: italic;
+}
+
+#blogPostList li {
+    border-bottom: 1px solid black;
+}
