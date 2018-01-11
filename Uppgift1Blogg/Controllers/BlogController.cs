@@ -22,11 +22,11 @@ namespace Uppgift1Blogg.Controllers
 
             if (!id.HasValue)
             {
-                model.BlogPosts = _context.BlogPost.OrderBy(bp => bp.Date).ToList();
+                model.BlogPosts = _context.BlogPost.OrderByDescending(bp => bp.Date).ToList();
             }
             else
             {
-                model.BlogPosts = _context.BlogPost.Where(bp => bp.CategoryId == id).OrderBy(bp => bp.Date).ToList();
+                model.BlogPosts = _context.BlogPost.Where(bp => bp.CategoryId == id).OrderByDescending(bp => bp.Date).ToList();
             }
 
             model.Categories = _context.Category.ToList();
@@ -102,12 +102,12 @@ namespace Uppgift1Blogg.Controllers
             {
                 //...filter search
                 model.BlogPosts = _context.BlogPost.Where(bp => bp.Header.ToLower().Contains(searchTxt.ToLower()))
-                    .OrderBy(bp => bp.Date).ToList();
+                    .OrderByDescending(bp => bp.Date).ToList();
             }
             else
             {
                 //...otherwise get all blogpost
-                model.BlogPosts = _context.BlogPost.OrderBy(bp => bp.Date).ToList();
+                model.BlogPosts = _context.BlogPost.OrderByDescending(bp => bp.Date).ToList();
             }
 
             //Get all categories
